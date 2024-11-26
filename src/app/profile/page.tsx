@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import BackArrorw from '../../../public/Back Arrow.png';
 // import bell from '../../../public/Bell Icon.png';
@@ -12,8 +12,23 @@ import circle from '../../../public/Ellipse 5.png'
 import photos from '../../../public/photos.png'
 import tags from '../../../public/tags.png'
 import Rectangle from '../../../public/Rectangle 11.png'
+// import router from 'next/navigation';
+// import axios from 'axios';
 
 export default function Page() {
+  // const router = useRouter();
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const res = await axios.post('/api/users/profile')
+  //       console.log(res.data);
+  //     } catch (error) {
+  //       console.log(error.message)
+  //     }
+  //   }
+  //   fetchData()
+  // }, [])
+
   return (
     <>
     <div className='p-5 mt-5'>
