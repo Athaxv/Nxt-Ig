@@ -23,9 +23,14 @@ export default function Page() {
         router.push('/profile')
 
        } catch (error) {
-        console.log("Login Failed")
-        toast.error(error.message)
-       }  
+        if (error instanceof Error) {
+            console.log("Login Failed")
+            toast.error(error.message);
+        } else {
+            throw new Error("An unknown error occurred");
+        }
+   
+}
     }
 
     useEffect(() => {
@@ -58,7 +63,7 @@ export default function Page() {
       </div>
       <p className='opacity-60 text-sm mt-10 font-normal'>OR</p>
       <div className='flex mt-8 gap-1'>
-        <p className='opacity-60'>Don't have an account?</p>
+        <p className='opacity-60'>Dont have an account?</p>
         <Link className='text-[#3797EF] ' href="/signup">Sign up</Link>
       </div>
     </div>

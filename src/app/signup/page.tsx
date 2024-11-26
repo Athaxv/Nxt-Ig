@@ -23,9 +23,14 @@ export default function Page() {
       router.push('/login')
 
     } catch (error) {
-      console.log("Signup Failed")
-      toast.error(error.message)
-    }
+      if (error instanceof Error) {
+        console.log("Signup Failed")
+              toast.error(error.message)
+      } else {
+          throw new Error("An unknown error occurred");
+      }
+ 
+}
   }
 
   useEffect(() => {

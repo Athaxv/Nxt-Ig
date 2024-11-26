@@ -44,13 +44,12 @@ export async function POST(request: NextRequest) {
             success: true,
             user: savedUser // return user data excluding password
         });
-    } catch (error: unknown) {
-        // if (error instanceof Error) {
-            // Return a detailed error message for better debugging
+    }  catch (error) {
+        if (error instanceof Error) {
             return NextResponse.json({ error: error.message }, { status: 500 });
-        // } else {
-        //     // Handle unknown errors
-        //     return NextResponse.json({ error: 'An unknown error occurred' }, { status: 500 });
-        // }
-    }
+        } else {
+            throw new Error("An unknown error occurred");
+        }
+   
+}
 }
